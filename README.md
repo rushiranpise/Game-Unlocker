@@ -84,8 +84,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributing
 
-@crdroidandroid
-@RisingTechOSS
-@tehcneko
+- [crdroidandroid](https://github.com/crdroidandroid)
+- [RisingTechOSS](https://github.com/RisingTechOSS)
+- [tehcneko](https://github.com/tehcneko)
 
 
