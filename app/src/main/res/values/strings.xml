@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Game Unlocker</string>
+    <string name="xposed_description">Spoof your device as different model for specific games to unlock higher FPS</string>
+    <string-array name="scope">
+        <item>com.activision.callofduty.shooter</item>
+        <item>com.dts.freefiremax</item>
+        <item>com.dts.freefireth</item>
+        <item>com.ea.gp.apexlegendsmobilefps</item>
+        <item>com.ea.gp.fifamobile</item>
+        <item>com.epicgames.fortnite</item>
+        <item>com.epicgames.portal</item>
+        <item>com.gameloft.android.ANMP.GloftA9HM</item>
+        <item>com.garena.game.codm</item>
+        <item>com.levelinfinite.hotta.gp</item>
+        <item>com.levelinfinite.sgameGlobal</item>
+        <item>com.madfingergames.legends</item>
+        <item>com.mobile.legends</item>
+        <item>com.netease.lztgglobal</item>
+        <item>com.pearlabyss.blackdesertm</item>
+        <item>com.pearlabyss.blackdesertm.gl</item>
+        <item>com.pubg.imobile</item>
+        <item>com.pubg.krmobile</item>
+        <item>com.rekoo.pubgm</item>
+        <item>com.riotgames.league.wildrift</item>
+        <item>com.riotgames.league.wildrifttw</item>
+        <item>com.riotgames.league.wildriftvn</item>
+        <item>com.supercell.clashofclans</item>
+        <item>com.tencent.ig</item>
+        <item>com.tencent.tmgp.kr.codm</item>
+        <item>com.tencent.tmgp.pubgmhd</item>
+        <item>com.tencent.tmgp.sgame</item>
+        <item>com.vng.codmvn</item>
+        <item>com.vng.mlbbvn</item>
+        <item>com.vng.pubgmobile</item>
+    </string-array>
+</resources>
