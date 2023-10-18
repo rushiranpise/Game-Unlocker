@@ -22,10 +22,10 @@ To get started with Game Unlocker, follow these steps:
 1. Ensure that your Android device is rooted.
 
 2. Install the Xposed/Lsposed Framework on your device.
-3. 
-4. Download the Game Unlocker module from the [releases section](https://github.com/rushiranpise/game-unlocker/releases) of this repository.
+   
+3. Download the Game Unlocker module from the [releases section](https://github.com/rushiranpise/game-unlocker/releases) of this repository.
 
-5. Install the downloaded apk :
+4. Install the downloaded apk :
    - Open Xposed/Lsposed Manager.
    - Go to the "Modules" section.
    - Search "Game Unlocker" and enable the module.
