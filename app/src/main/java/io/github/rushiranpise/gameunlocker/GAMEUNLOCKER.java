@@ -104,7 +104,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         }
 
         if (Arrays.asList(PACKAGE_M11U).contains(packageName)) {
-            K30U();
+            M11U();
             XposedBridge.log("Spoofed" + packageName + " as Mi 11 Ultra");
 
         }
