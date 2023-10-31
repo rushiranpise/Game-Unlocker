@@ -40,6 +40,8 @@ You can untick the game you don't want to spoof for the module scope. Force stop
 
 **Note:** Keep in mind that device spoofing may violate the terms of service for some games or apps.
 
+Report any suggestions/issues with games [here](https://github.com/rushiranpise/Game-Unlocker/issues)
+
 ## Supported Games
 
 <details>
@@ -87,5 +89,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [crdroidandroid](https://github.com/crdroidandroid)
 - [RisingTechOSS](https://github.com/RisingTechOSS)
 - [tehcneko](https://github.com/tehcneko)
-
-

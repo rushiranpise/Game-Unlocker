@@ -22,7 +22,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_ROG1 = {"com.madfingergames.legends"};
     private static final String[] PACKAGE_ROG3 = {"com.pearlabyss.blackdesertm","com.pearlabyss.blackdesertm.gl"};
     private static final String[] PACKAGE_XP5 = {"com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm","com.vng.codmvn"};
-    private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.ig","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
+    private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
     private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
     private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.supercell.clashofclans","com.tencent.tmgp.sgame","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
@@ -30,6 +30,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_K30U = {"com.pubg.imobile"};
+    private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
@@ -101,6 +102,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed" + packageName + " as Redmi K30 Ultra");
 
         }
+
+        if (Arrays.asList(PACKAGE_M11U).contains(packageName)) {
+            K30U();
+            XposedBridge.log("Spoofed" + packageName + " as Mi 11 Ultra");
+
+        }
         
     }
 
@@ -165,6 +172,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void K30U() {
         setBuildField("MANUFACTURER", "Xiaomi");
         setBuildField("MODEL", "M2006J10C");
+    }
+
+    private static void M11U() {
+        setBuildField("MANUFACTURER", "Xiaomi");
+        setBuildField("MODEL", "M2102K1G");
     }
 
     private static void setBuildField(String key, String value) {
