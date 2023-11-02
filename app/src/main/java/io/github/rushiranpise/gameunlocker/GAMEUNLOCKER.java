@@ -24,7 +24,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_XP5 = {"com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm","com.vng.codmvn"};
     private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
     private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
-    private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.supercell.clashofclans","com.tencent.tmgp.sgame","com.vng.mlbbvn"};
+    private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.tencent.tmgp.sgame","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
     private static final String[] PACKAGE_OP9P = {"com.tencent.lolm"};
     private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};

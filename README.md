@@ -60,6 +60,7 @@ Report any suggestions/issues with games [here](https://github.com/rushiranpise/
   - https://play.google.com/store/apps/details?id=com.levelinfinite.sgameGlobal
   - https://play.google.com/store/apps/details?id=com.madfingergames.legends
   - https://play.google.com/store/apps/details?id=com.mobile.legends
+  - https://global.app.mi.com/details?lo=ID&la=en&id=com.mobilelegends.mi
   - https://play.google.com/store/apps/details?id=com.netease.lztgglobal
   - https://play.google.com/store/apps/details?id=com.pearlabyss.blackdesertm
   - https://play.google.com/store/apps/details?id=com.pearlabyss.blackdesertm.gl
