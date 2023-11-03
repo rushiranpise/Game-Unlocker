@@ -21,7 +21,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String TAG = GAMEUNLOCKER.class.getSimpleName();
     private static final String[] PACKAGE_ROG1 = {"com.madfingergames.legends"};
     private static final String[] PACKAGE_ROG3 = {"com.pearlabyss.blackdesertm","com.pearlabyss.blackdesertm.gl"};
-    private static final String[] PACKAGE_XP5 = {"com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm","com.vng.codmvn"};
     private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
     private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
     private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.tencent.tmgp.sgame","com.vng.mlbbvn"};
@@ -31,6 +30,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_K30U = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
+    private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
@@ -46,12 +46,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         if (Arrays.asList(PACKAGE_ROG3).contains(packageName)) {
             ROG3();
             XposedBridge.log("Spoofed" + packageName + " as Asus ROG 3");
-
-        }
-
-        if (Arrays.asList(PACKAGE_XP5).contains(packageName)) {
-            XP5();
-            XposedBridge.log("Spoofed" + packageName + " as Sony Xperia 5");
 
         }
 
@@ -106,6 +100,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         if (Arrays.asList(PACKAGE_M11U).contains(packageName)) {
             M11U();
             XposedBridge.log("Spoofed" + packageName + " as Mi 11 Ultra");
+
+        }
+
+        if (Arrays.asList(PACKAGE_Y700).contains(packageName)) {
+            Y700();
+            XposedBridge.log("Spoofed" + packageName + " as Lenovo Legion Y700");
 
         }
         
@@ -177,6 +177,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void M11U() {
         setBuildField("MANUFACTURER", "Xiaomi");
         setBuildField("MODEL", "M2102K1G");
+    }
+
+    private static void Y700() {
+        setBuildField("MANUFACTURER", "lenovo");
+        setBuildField("MODEL", "Lenovo TB-9707F");
     }
 
     private static void setBuildField(String key, String value) {
