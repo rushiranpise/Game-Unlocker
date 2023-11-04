@@ -4,9 +4,12 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: set up JDK 11
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
       uses: actions/setup-java@v2
       with:
         java-version: '11'
@@ -15,15 +18,52 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
+
     - name: Build debug APK
       run: ./gradlew assembleDebug --stacktrace
+
+    - name: Get App Version Name
+      run: echo "::set-env name=APP_VERSION::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"
+
+    - name: Rename APK
+      run: mv app/build/outputs/apk/debug/app-debug.apk game-unlocker-v$APP_VERSION.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
+        name: Game Unlocker
+        path: game-unlocker-v$APP_VERSION.apk
 
-          name: Game Unlocker
-          path: app/build/outputs/apk/debug/app-debug.apk
-    
+    - name: Create Pre-Release
+      id: create_release
+      run: |
+        commit_id=$(git rev-parse HEAD)
+        release_description="Changelog: $(git log --oneline $commit_id...HEAD)"
+        echo "Creating release with tag: $commit_id and description: $release_description"
+        response=$(curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -d '{
+            "tag_name": "'"$commit_id"'",
+            "name": "Release '"$commit_id"'",
+            "body": "'"$release_description"'",
+            "draft": false,
+            "prerelease": true
+          }' \
+          https://api.github.com/repos/${{ github.repository }}/releases)
+        echo $response
+        release_id=$(echo $response | jq -r .id)
+        echo "::set-env name=RELEASE_ID::$release_id"
+        
+    - name: Upload Release Assets
+      run: |
+        release_id=$RELEASE_ID
+        asset_url=$(curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Content-Type: application/octet-stream" \
+          --data-binary "@game-unlocker-v$APP_VERSION.apk" \
+          https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=game-unlocker-v$APP_VERSION.apk)
+        echo "Uploaded asset: $asset_url"
+
