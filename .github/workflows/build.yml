@@ -40,27 +40,16 @@ jobs:
 
     - name: Create Pre-Release
       id: create_release
-      run: |
-        tag_name=$(git rev-parse HEAD)
-        release_description="Changelog: $(git log --oneline $tag_name...HEAD)"
-        echo "Creating release with tag: $tag_name and description: $release_description"
-        response=$(curl -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          -d '{
-            "tag_name": "'"$tag_name"'",
-            "name": "Release '"$tag_name"'",
-            "body": "'"$release_description"'",
-            "draft": false,
-            "prerelease": true
-          }' \
-          "https://api.github.com/repos/${{ github.repository }}/releases")
-        release_id=$(echo $response | jq -r .id)
-        echo "::set-output name=release_id::$release_id"
+      uses: actions/create-release@v1
+      with:
+        files: game-unlocker-v${{ steps.version.outputs.app_version }}.apk
+        tag_name: ${{ github.sha }}
+        release_name: Release ${{ github.sha }}
+        prerelease: true
 
     - name: Upload Release Assets
       run: |
-        release_id=${{ steps.create_release.outputs.release_id }}
+        release_id=${{ steps.create_release.outputs.id }}
         asset_url=$(curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/octet-stream" \
