@@ -41,23 +41,23 @@ jobs:
     - name: Create Pre-Release
       id: create_release
       run: |
-        commit_id=$(git rev-parse HEAD)
-        release_description="Changelog: $(git log --oneline $commit_id...HEAD)"
-        echo "Creating release with tag: $commit_id and description: $release_description"
+        tag_name=$(git rev-parse HEAD)
+        release_description="Changelog: $(git log --oneline $tag_name...HEAD)"
+        echo "Creating release with tag: $tag_name and description: $release_description"
         response=$(curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
           -d '{
-            "tag_name": "'"$commit_id"'",
-            "name": "Release '"$commit_id"'",
+            "tag_name": "'"$tag_name"'",
+            "name": "Release '"$tag_name"'",
             "body": "'"$release_description"'",
             "draft": false,
             "prerelease": true
           }' \
-          https://api.github.com/repos/${{ github.repository }}/releases)
-        echo $response
+          "https://api.github.com/repos/${{ github.repository }}/releases")
         release_id=$(echo $response | jq -r .id)
         echo "::set-output name=release_id::$release_id"
-        
+
     - name: Upload Release Assets
       run: |
         release_id=${{ steps.create_release.outputs.release_id }}
@@ -65,5 +65,5 @@ jobs:
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/octet-stream" \
           --data-binary "@game-unlocker-v${{ steps.version.outputs.app_version }}.apk" \
-          https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=game-unlocker-v${{ steps.version.outputs.app_version }}.apk)
+          "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=game-unlocker-v${{ steps.version.outputs.app_version }}.apk")
         echo "Uploaded asset: $asset_url"
