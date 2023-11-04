@@ -5,9 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      APP_VERSION: ''
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -29,16 +26,17 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
 
     - name: Get App Version Name
-      run: echo "APP_VERSION=$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')" >> $GITHUB_ENV
+      id: version
+      run: echo "::set-output name=app_version::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/debug/app-debug.apk game-unlocker-v$APP_VERSION.apk
+      run: mv app/build/outputs/apk/debug/app-debug.apk game-unlocker-v${{ steps.version.outputs.app_version }}.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
         name: Game Unlocker
-        path: game-unlocker-v$APP_VERSION.apk
+        path: game-unlocker-v${{ steps.version.outputs.app_version }}.apk
 
     - name: Create Pre-Release
       id: create_release
@@ -58,14 +56,14 @@ jobs:
           https://api.github.com/repos/${{ github.repository }}/releases)
         echo $response
         release_id=$(echo $response | jq -r .id)
-        echo "RELEASE_ID=$release_id" >> $GITHUB_ENV
-
+        echo "::set-output name=release_id::$release_id"
+        
     - name: Upload Release Assets
       run: |
-        release_id=$RELEASE_ID
+        release_id=${{ steps.create_release.outputs.release_id }}
         asset_url=$(curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/octet-stream" \
-          --data-binary "@game-unlocker-v$APP_VERSION.apk" \
-          https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=game-unlocker-v$APP_VERSION.apk)
+          --data-binary "@game-unlocker-v${{ steps.version.outputs.app_version }}.apk" \
+          https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=game-unlocker-v${{ steps.version.outputs.app_version }}.apk)
         echo "Uploaded asset: $asset_url"
