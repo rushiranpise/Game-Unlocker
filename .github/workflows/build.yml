@@ -46,6 +46,8 @@ jobs:
         tag_name: ${{ github.sha }}
         release_name: Release ${{ github.sha }}
         prerelease: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload Release Assets
       run: |
