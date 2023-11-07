@@ -23,7 +23,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_ROG3 = {"com.pearlabyss.blackdesertm","com.pearlabyss.blackdesertm.gl"};
     private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
     private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
-    private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.tencent.tmgp.sgame","com.vng.mlbbvn"};
+    private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
     private static final String[] PACKAGE_OP9P = {"com.tencent.lolm"};
     private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
@@ -31,6 +31,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_K30U = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
     private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
+    private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame"}
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
@@ -108,6 +109,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed" + packageName + " as Lenovo Legion Y700");
 
         }
+
+        if (Arrays.asList(PACKAGE_V2254A).contains(packageName)) {
+            V2254A();
+            XposedBridge.log("Spoofed" + packageName + " as iQOO 11 Pro");
+
+        }
         
     }
 
@@ -182,6 +189,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void Y700() {
         setBuildField("MANUFACTURER", "lenovo");
         setBuildField("MODEL", "Lenovo TB-9707F");
+    }
+
+    private static void V2254A() {
+        setBuildField("MANUFACTURER", "vivo");
+        setBuildField("MODEL", "V2254A");
     }
 
     private static void setBuildField(String key, String value) {
