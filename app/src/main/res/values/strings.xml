@@ -2,6 +2,7 @@
     <string name="app_name">Game Unlocker</string>
     <string name="xposed_description">Spoof your device as different model for specific games to unlock higher FPS</string>
     <string-array name="scope">
+        <item>com.miHoYo.GenshinImpact</item>
         <item>com.activision.callofduty.shooter</item>
         <item>com.dts.freefiremax</item>
         <item>com.dts.freefireth</item>
