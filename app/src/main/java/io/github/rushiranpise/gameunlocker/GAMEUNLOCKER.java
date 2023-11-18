@@ -21,7 +21,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String TAG = GAMEUNLOCKER.class.getSimpleName();
     private static final String[] PACKAGE_ROG1 = {"com.madfingergames.legends"};
     private static final String[] PACKAGE_ROG3 = {"com.pearlabyss.blackdesertm","com.pearlabyss.blackdesertm.gl"};
-    private static final String[] PACKAGE_OP8P = {"com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
+    private static final String[] PACKAGE_OP8P = {"com.miHoYo.GenshinImpact", "com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
     private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
     private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
