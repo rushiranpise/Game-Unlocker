@@ -26,12 +26,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
     private static final String[] PACKAGE_OP9P = {"com.tencent.lolm"};
-    private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
+    // private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_K30U = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
     private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
-    private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame"};
+    private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame","com.levelinfinite.sgameGlobal"};
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
@@ -80,11 +80,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
         }
 
-        if (Arrays.asList(PACKAGE_M13TP).contains(packageName)) {
-            M13TP();
-            XposedBridge.log("Spoofed" + packageName + " as  Mi 13T Pro");
+        // if (Arrays.asList(PACKAGE_M13TP).contains(packageName)) {
+        //     M13TP();
+        //     XposedBridge.log("Spoofed" + packageName + " as  Mi 13T Pro");
 
-        }
+        // }
 
         if (Arrays.asList(PACKAGE_F5).contains(packageName)) {
             POCOF5();
@@ -165,11 +165,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setBuildField("MODEL", "LE2123");
     }
 
-    private static void M13TP() {
-        setBuildField("BRAND", "Xiaomi");
-        setBuildField("MANUFACTURER", "Xiaomi");
-        setBuildField("MODEL", "2210132C");
-    }
+    // private static void M13TP() {
+    //     setBuildField("BRAND", "Xiaomi");
+    //     setBuildField("MANUFACTURER", "Xiaomi");
+    //     setBuildField("MODEL", "2210132C");
+    // }
 
     private static void POCOF5() {
         setBuildField("MANUFACTURER", "Xiaomi");

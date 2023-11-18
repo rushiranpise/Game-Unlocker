@@ -61,6 +61,7 @@ Report any suggestions/issues with games [here](https://github.com/rushiranpise/
   - [Fortnite](https://play.google.com/store/apps/details?id=com.epicgames.fortnite&hl=en&gl=US)
   - [Free Fire MAX](https://play.google.com/store/apps/details?id=com.dts.freefiremax&hl=en&gl=US)
   - [Free Fire](https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=en&gl=US)
+  - [Genshin Impact](https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact)
   - [Honor of Kings](https://play.google.com/store/apps/details?id=com.levelinfinite.sgameGlobal&hl=en&gl=US)
   - [Honor of Kings](https://play.google.com/store/apps/details?id=com.tencent.tmgp.sgame&hl=en&gl=US)
   - [LMHT: Tốc Chiến](https://play.google.com/store/apps/details?id=com.riotgames.league.wildriftvn&hl=en&gl=US)
