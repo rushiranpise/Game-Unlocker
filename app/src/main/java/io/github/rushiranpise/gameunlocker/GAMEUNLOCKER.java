@@ -28,7 +28,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_OP9P = {"com.tencent.lolm"};
     // private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
-    private static final String[] PACKAGE_K30U = {"com.pubg.imobile"};
+    private static final String[] PACKAGE_NEO7 = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
     private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
     private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame","com.levelinfinite.sgameGlobal"};
@@ -92,9 +92,9 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
         }
 
-        if (Arrays.asList(PACKAGE_K30U).contains(packageName)) {
-            K30U();
-            XposedBridge.log("Spoofed" + packageName + " as Redmi K30 Ultra");
+        if (Arrays.asList(PACKAGE_NEO7).contains(packageName)) {
+            NEO7();
+            XposedBridge.log("Spoofed" + packageName + " as iQOO Neo 7");
 
         }
 
@@ -176,9 +176,9 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setBuildField("MODEL", "23049PCD8G");
     }
 
-    private static void K30U() {
-        setBuildField("MANUFACTURER", "Xiaomi");
-        setBuildField("MODEL", "M2006J10C");
+    private static void NEO7() {
+        setBuildField("MANUFACTURER", "iQOO");
+        setBuildField("MODEL", "I2214");
     }
 
     private static void M11U() {
