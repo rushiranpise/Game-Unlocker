@@ -11,7 +11,7 @@ jobs:
 
     - name: Sign with debug key
       run: |
-        sed -i "18i signingConfig signingConfigs.debug" ./app/build.gradle
+        sed -i "19i signingConfig signingConfigs.debug" ./app/build.gradle
         curl -so- https://raw.githubusercontent.com/artem-zinnatullin/RxJavaProGuardRules/master/rxjava-proguard-rules/proguard-rules.txt | tee -a ./app/proguard-rules.pro
         cat ./app/proguard-rules.pro
 
