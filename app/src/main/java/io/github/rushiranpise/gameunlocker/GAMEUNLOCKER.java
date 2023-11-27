@@ -134,7 +134,9 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     }
 
     private static void OP8P() {
+        setBuildField("BRAND", "OnePlus");
         setBuildField("MANUFACTURER", "OnePlus");
+        setBuildField("DEVICE", "OnePlus8Pro");
         setBuildField("MODEL", "IN2023");
     }
 
