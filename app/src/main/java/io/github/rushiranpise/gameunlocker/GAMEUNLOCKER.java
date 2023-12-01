@@ -22,11 +22,9 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_ROG1 = {"com.madfingergames.legends"};
     private static final String[] PACKAGE_ROG3 = {"com.pearlabyss.blackdesertm","com.pearlabyss.blackdesertm.gl"};
     private static final String[] PACKAGE_OP8P = {"com.miHoYo.GenshinImpact", "com.netease.lztgglobal","com.pubg.krmobile","com.rekoo.pubgm","com.riotgames.league.wildrift","com.riotgames.league.wildrifttw","com.riotgames.league.wildriftvn","com.tencent.tmgp.pubgmhd","com.vng.pubgmobile"};
-    private static final String[] PACKAGE_OP9R = {"com.epicgames.fortnite","com.epicgames.portal"};
+    private static final String[] PACKAGE_OP9P = {"com.epicgames.fortnite","com.epicgames.portal","com.tencent.lolm"};
     private static final String[] PACKAGE_M11TP = {"com.ea.gp.apexlegendsmobilefps","com.levelinfinite.hotta.gp","com.mobile.legends","com.mobilelegends.mi","com.supercell.clashofclans","com.vng.mlbbvn"};
     private static final String[] PACKAGE_ROG6 = {"com.ea.gp.fifamobile","com.gameloft.android.ANMP.GloftA9HM"};
-    private static final String[] PACKAGE_OP9P = {"com.tencent.lolm"};
-    // private static final String[] PACKAGE_M13TP = {"com.levelinfinite.sgameGlobal"};
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_NEO7 = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
@@ -56,9 +54,9 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
         }
 
-        if (Arrays.asList(PACKAGE_OP9R).contains(packageName)) {
-            OP9RP();
-            XposedBridge.log("Spoofed " + packageName + " as OnePlus 9R");
+        if (Arrays.asList(PACKAGE_OP9P).contains(packageName)) {
+            OP9P();
+            XposedBridge.log("Spoofed " + packageName + " as OnePlus 9 PRO");
 
         }
 
@@ -73,18 +71,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed " + packageName + " as Asus ROG 6");
  
         }
-
-        if (Arrays.asList(PACKAGE_OP9P).contains(packageName)) {
-            OP9P();
-            XposedBridge.log("Spoofed " + packageName + " as OnePlus 9 Pro");
-
-        }
-
-        // if (Arrays.asList(PACKAGE_M13TP).contains(packageName)) {
-        //     M13TP();
-        //     XposedBridge.log("Spoofed" + packageName + " as  Mi 13T Pro");
-
-        // }
 
         if (Arrays.asList(PACKAGE_F5).contains(packageName)) {
             POCOF5();
@@ -140,9 +126,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setBuildField("MODEL", "IN2023");
     }
 
-    private static void OP9RP() {
+    private static void OP9P() {
+        setBuildField("BRAND", "OnePlus");
         setBuildField("MANUFACTURER", "OnePlus");
-        setBuildField("MODEL", "LE2101");
+        setBuildField("DEVICE", "OnePlus9Pro");
+        setBuildField("PRODUCT", "OnePlus9Pro_EEA");
+        setBuildField("MODEL", "LE2123");
     }
 
     private static void M11TP() {
@@ -161,17 +150,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setBuildField("DEVICE", "AI2201");
         setBuildField("MODEL", "ASUS_AI2201");
     }
-
-   private static void OP9P() {
-        setBuildField("MANUFACTURER", "OnePlus");
-        setBuildField("MODEL", "LE2123");
-    }
-
-    // private static void M13TP() {
-    //     setBuildField("BRAND", "Xiaomi");
-    //     setBuildField("MANUFACTURER", "Xiaomi");
-    //     setBuildField("MODEL", "2210132C");
-    // }
 
     private static void POCOF5() {
         setBuildField("MANUFACTURER", "Xiaomi");
