@@ -40,43 +40,43 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         
         if (Arrays.asList(PACKAGE_ROG1).contains(packageName)) {
             ROG1();
-            XposedBridge.log("Spoofed" + packageName + " as Asus ROG 1");
+            XposedBridge.log("Spoofed " + packageName + " as Asus ROG 1");
 
         }
 
         if (Arrays.asList(PACKAGE_ROG3).contains(packageName)) {
             ROG3();
-            XposedBridge.log("Spoofed" + packageName + " as Asus ROG 3");
+            XposedBridge.log("Spoofed " + packageName + " as Asus ROG 3");
 
         }
 
         if (Arrays.asList(PACKAGE_OP8P).contains(packageName)) {
             OP8P();
-            XposedBridge.log("Spoofed" + packageName + " as OnePlus 8 Pro");
+            XposedBridge.log("Spoofed " + packageName + " as OnePlus 8 Pro");
 
         }
 
         if (Arrays.asList(PACKAGE_OP9R).contains(packageName)) {
             OP9RP();
-            XposedBridge.log("Spoofed" + packageName + " as OnePlus 9R");
+            XposedBridge.log("Spoofed " + packageName + " as OnePlus 9R");
 
         }
 
         if (Arrays.asList(PACKAGE_M11TP).contains(packageName)) {
             M11TP();
-            XposedBridge.log("Spoofed" + packageName + " as Mi 11T Pro");
+            XposedBridge.log("Spoofed " + packageName + " as Mi 11T Pro");
 
         }
 
         if (Arrays.asList(PACKAGE_ROG6).contains(packageName)) {
             ROG6();
-            XposedBridge.log("Spoofed" + packageName + " as Asus ROG 6");
+            XposedBridge.log("Spoofed " + packageName + " as Asus ROG 6");
  
         }
 
         if (Arrays.asList(PACKAGE_OP9P).contains(packageName)) {
             OP9P();
-            XposedBridge.log("Spoofed" + packageName + " as OnePlus 9 Pro");
+            XposedBridge.log("Spoofed " + packageName + " as OnePlus 9 Pro");
 
         }
 
@@ -88,31 +88,31 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
         if (Arrays.asList(PACKAGE_F5).contains(packageName)) {
             POCOF5();
-            XposedBridge.log("Spoofed" + packageName + " as Poco F5");
+            XposedBridge.log("Spoofed " + packageName + " as Poco F5");
 
         }
 
         if (Arrays.asList(PACKAGE_NEO7).contains(packageName)) {
             NEO7();
-            XposedBridge.log("Spoofed" + packageName + " as iQOO Neo 7");
+            XposedBridge.log("Spoofed " + packageName + " as iQOO Neo 7");
 
         }
 
         if (Arrays.asList(PACKAGE_M11U).contains(packageName)) {
             M11U();
-            XposedBridge.log("Spoofed" + packageName + " as Mi 11 Ultra");
+            XposedBridge.log("Spoofed " + packageName + " as Mi 11 Ultra");
 
         }
 
         if (Arrays.asList(PACKAGE_Y700).contains(packageName)) {
             Y700();
-            XposedBridge.log("Spoofed" + packageName + " as Lenovo Legion Y700");
+            XposedBridge.log("Spoofed " + packageName + " as Lenovo Legion Y700");
 
         }
 
         if (Arrays.asList(PACKAGE_V2254A).contains(packageName)) {
             V2254A();
-            XposedBridge.log("Spoofed" + packageName + " as iQOO 11 Pro");
+            XposedBridge.log("Spoofed " + packageName + " as iQOO 11 Pro");
 
         }
         
@@ -134,8 +134,10 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     }
 
     private static void OP8P() {
+        setBuildField("BRAND", "OnePlus");
         setBuildField("MANUFACTURER", "OnePlus");
-        setBuildField("MODEL", "IN2020");
+        setBuildField("DEVICE", "OnePlus8Pro");
+        setBuildField("MODEL", "IN2023");
     }
 
     private static void OP9RP() {
