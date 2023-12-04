@@ -30,6 +30,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
     private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
     private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame","com.levelinfinite.sgameGlobal"};
+    private static final String[] PACKAGE_NX729J = {"com.YoStar.AetherGazer"};
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
@@ -99,6 +100,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         if (Arrays.asList(PACKAGE_V2254A).contains(packageName)) {
             V2254A();
             XposedBridge.log("Spoofed " + packageName + " as iQOO 11 Pro");
+
+        }
+
+        if (Arrays.asList(PACKAGE_NX729J).contains(packageName)) {
+            NX729J();
+            XposedBridge.log("Spoofed " + packageName + " as Nubia Red Magic 8 Pro");
 
         }
         
@@ -174,6 +181,13 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void V2254A() {
         setBuildField("MANUFACTURER", "vivo");
         setBuildField("MODEL", "V2254A");
+    }
+
+    private static void NX729J() {
+        setBuildField("BRAND", "nubia");
+        setBuildField("MANUFACTURER", "nubia");
+        setBuildField("DEVICE", "NX729J");
+        setBuildField("MODEL", "NX729J");
     }
 
     private static void setBuildField(String key, String value) {

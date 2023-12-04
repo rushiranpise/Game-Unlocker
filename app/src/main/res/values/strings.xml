@@ -2,7 +2,8 @@
     <string name="app_name">Game Unlocker</string>
     <string name="xposed_description">Spoof your device as different model for specific games to unlock higher FPS</string>
     <string-array name="scope">
-        <item>com.miHoYo.GenshinImpact</item>
+	    <item>com.mobilelegends.mi</item>
+        <item>com.YoStar.AetherGazer</item>
         <item>com.activision.callofduty.shooter</item>
         <item>com.dts.freefiremax</item>
         <item>com.dts.freefireth</item>
@@ -15,11 +16,11 @@
         <item>com.levelinfinite.hotta.gp</item>
         <item>com.levelinfinite.sgameGlobal</item>
         <item>com.madfingergames.legends</item>
+        <item>com.miHoYo.GenshinImpact</item>
         <item>com.mobile.legends</item>
-	<item>com.mobilelegends.mi</item>
         <item>com.netease.lztgglobal</item>
-        <item>com.pearlabyss.blackdesertm</item>
         <item>com.pearlabyss.blackdesertm.gl</item>
+        <item>com.pearlabyss.blackdesertm</item>
         <item>com.pubg.imobile</item>
         <item>com.pubg.krmobile</item>
         <item>com.rekoo.pubgm</item>
