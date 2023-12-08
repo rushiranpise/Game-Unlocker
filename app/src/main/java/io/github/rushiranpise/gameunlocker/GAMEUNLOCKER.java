@@ -91,12 +91,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
         }
 
-        if (Arrays.asList(PACKAGE_Y700).contains(packageName)) {
-            Y700();
-            XposedBridge.log("Spoofed " + packageName + " as Lenovo Legion Y700");
-
-        }
-
         if (Arrays.asList(PACKAGE_DM3Q).contains(packageName)) {
             DM3Q();
             XposedBridge.log("Spoofed " + packageName + " as Galaxy S23 Ultra");
