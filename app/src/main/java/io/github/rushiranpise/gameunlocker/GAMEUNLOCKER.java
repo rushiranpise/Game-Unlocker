@@ -28,7 +28,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_NEO7 = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
-    private static final String[] PACKAGE_Y700 = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
+    private static final String[] PACKAGE_DM3Q = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
     private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame","com.levelinfinite.sgameGlobal"};
     private static final String[] PACKAGE_NX729J = {"com.YoStar.AetherGazer"};
 
@@ -94,6 +94,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         if (Arrays.asList(PACKAGE_Y700).contains(packageName)) {
             Y700();
             XposedBridge.log("Spoofed " + packageName + " as Lenovo Legion Y700");
+
+        }
+
+        if (Arrays.asList(PACKAGE_DM3Q).contains(packageName)) {
+            DM3Q();
+            XposedBridge.log("Spoofed " + packageName + " as Galaxy S23 Ultra");
 
         }
 
@@ -188,6 +194,13 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setBuildField("MANUFACTURER", "nubia");
         setBuildField("DEVICE", "NX729J");
         setBuildField("MODEL", "NX729J");
+    }
+
+    private static void DM3Q() {
+        setBuildField("BRAND", "Samsung");
+        setBuildField("MANUFACTURER", "Samsung");
+        setBuildField("DEVICE", "dm3q");
+        setBuildField("MODEL", "SM-S918B");
     }
 
     private static void setBuildField(String key, String value) {
