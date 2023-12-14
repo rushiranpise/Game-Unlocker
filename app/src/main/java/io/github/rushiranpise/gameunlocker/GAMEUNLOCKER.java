@@ -28,7 +28,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static final String[] PACKAGE_F5 = {"com.dts.freefiremax","com.dts.freefireth"};
     private static final String[] PACKAGE_NEO7 = {"com.pubg.imobile"};
     private static final String[] PACKAGE_M11U = {"com.tencent.ig"};
-    private static final String[] PACKAGE_DM3Q = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm"};
+    private static final String[] PACKAGE_DM3Q = {"com.vng.codmvn","com.activision.callofduty.shooter","com.garena.game.codm","com.tencent.tmgp.kr.codm","com.garena.game.kgvn"};
     private static final String[] PACKAGE_V2254A = {"com.tencent.tmgp.sgame","com.levelinfinite.sgameGlobal","com.mojang.minecraftpe"};
     private static final String[] PACKAGE_NX729J = {"com.YoStar.AetherGazer"};
 
