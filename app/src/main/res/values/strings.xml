@@ -2,7 +2,9 @@
     <string name="app_name">Game Unlocker</string>
     <string name="xposed_description">Spoof your device as different model for specific games to unlock higher FPS</string>
     <string-array name="scope">
-	    <item>com.mobilelegends.mi</item>
+	<item>com.garena.game.kgvn</item>
+	<item>com.mojang.minecraftpe</item>
+	<item>com.mobilelegends.mi</item>
         <item>com.YoStar.AetherGazer</item>
         <item>com.activision.callofduty.shooter</item>
         <item>com.dts.freefiremax</item>
