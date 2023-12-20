@@ -158,10 +158,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             M11TP();
             XposedBridge.log("Spoofed " + packageName + " as Xiaomi Mi 11T Pro");
         }
-        if (Arrays.asList(PACKAGE_M11U).contains(packageName)) {
-            M11U();
-            XposedBridge.log("Spoofed " + packageName + " as Xiaomi Mi 11 Ultra");
-        }
     }
 
     // Asus
