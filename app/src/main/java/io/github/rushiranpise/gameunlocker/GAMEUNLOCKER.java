@@ -19,16 +19,16 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
     private static final String TAG = GAMEUNLOCKER.class.getSimpleName();
-    // Packages to Spoof as 
+    // Packages to Spoof as Asus Rog 1
     private static final String[] PACKAGE_ROG1 = {
         "com.madfingergames.legends"
         };
-    // Packages to Spoof as
+    // Packages to Spoof as Asus Rog 3
     private static final String[] PACKAGE_ROG3 = {
         "com.pearlabyss.blackdesertm",
         "com.pearlabyss.blackdesertm.gl"
         };
-    // Packages to Spoof as
+    // Packages to Spoof as Asus Rog 6
     private static final String[] PACKAGE_ROG6 = {
         "com.epicgames.fortnite",
         "com.ea.gp.fifamobile",
