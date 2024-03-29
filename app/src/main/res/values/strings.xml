@@ -21,11 +21,15 @@
         <item>com.mobilelegends.mi</item>
         <item>com.mojang.minecraftpe</item>
         <item>com.netease.lztgglobal</item>
+        <item>com.ngame.allstar.eu</item>
         <item>com.pearlabyss.blackdesertm.gl</item>
         <item>com.pearlabyss.blackdesertm</item>
         <item>com.pubg.imobile</item>
         <item>com.pubg.krmobile</item>
         <item>com.rekoo.pubgm</item>
+        <item>com.riotgames.league.teamfighttactics</item>
+        <item>com.riotgames.league.teamfighttacticstw</item>
+        <item>com.riotgames.league.teamfighttacticsvn</item>
         <item>com.riotgames.league.wildrift</item>
         <item>com.riotgames.league.wildrifttw</item>
         <item>com.riotgames.league.wildriftvn</item>
@@ -40,5 +44,6 @@
         <item>com.vng.pubgmobile</item>
         <item>jp.konami.pesam</item>
         <item>com.proximabeta.mf.uamo</item>
+        <item>vng.games.revelation.mobile</item>
     </string-array>
 </resources>
