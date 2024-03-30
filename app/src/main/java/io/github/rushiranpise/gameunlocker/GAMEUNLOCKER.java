@@ -22,6 +22,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     // Packages to Spoof as ROG Phone 6
     private static final String[] packagesToChangeROG6 = {
         "com.activision.callofduty.shooter",
+        "com.activision.callofudty.warzone",
         "com.ea.gp.fifamobile",
         "com.gameloft.android.ANMP.GloftA9HM",
         "com.madfingergames.legends",
@@ -56,7 +57,8 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.ngame.allstar.eu",
         "com.mojang.minecraftpe",
         "com.YoStar.AetherGazer",
-        "com.miHoYo.GenshinImpact"
+        "com.miHoYo.GenshinImpact",
+        "com.garena.game.lmjx"
     };
 
     // Packages to Spoof as OnePlus 9 Pro
@@ -94,6 +96,14 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.proximabeta.mf.uamo"
     };
 
+    // Packages to Spoof as iQOO 11 Pro
+    private static final String[] packagesToChangeiQ11P = {
+        "com.tencent.KiHan",
+        "com.tencent.tmgp.cf",
+        "com.tencent.tmgp.cod",
+        "com.tencent.tmgp.gnyx"
+    };
+
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
 
@@ -111,12 +121,18 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed " + packageName + " as Black Shark 4");
         }
 
+        // Iqoo
+        if (Arrays.asList(packagesToChangeiQ11P).contains(packageName)) {
+            propsToChangeiQ11P();
+            XposedBridge.log("Spoofed " + packageName + " as iQOO 11 Pro");
+        }
+
         // OnePlus
         if (Arrays.asList(packagesToChangeOP8P).contains(packageName)) {
             propsToChangeOP8P();
             XposedBridge.log("Spoofed " + packageName + " as OnePlus 8 Pro");
         }
-        
+
         if (Arrays.asList(packagesToChangeOP9P).contains(packageName)) {
             propsToChangeOP9P();
             XposedBridge.log("Spoofed " + packageName + " as OnePlus 9 Pro");
@@ -139,7 +155,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             propsToChangeMI11TP();
             XposedBridge.log("Spoofed " + packageName + " as Xiaomi Mi 11T Pro");
         }
-        
+
         if (Arrays.asList(packagesToChangeMI13P).contains(packageName)) {
             propsToChangeMI13P();
             XposedBridge.log("Spoofed " + packageName + " as Xiaomi Mi 13 Pro");
@@ -160,6 +176,13 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void propsToChangeBS4() {
         setPropValue("MANUFACTURER", "blackshark");
         setPropValue("MODEL", "2SM-X706B");
+    }
+
+    // Iqoo
+    // Props to Spoof as iQOO 11 Pro
+    private static void propsToChangeBS4() {
+        setPropValue("MANUFACTURER", "vivo");
+        setPropValue("MODEL", "V2243A");
     }
 
     // OnePlus
