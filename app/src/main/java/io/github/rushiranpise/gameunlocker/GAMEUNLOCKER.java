@@ -180,7 +180,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
     // Iqoo
     // Props to Spoof as iQOO 11 Pro
-    private static void propsToChangeBS4() {
+    private static void propsToChangeiQ11P() {
         setPropValue("MANUFACTURER", "vivo");
         setPropValue("MODEL", "V2243A");
     }
