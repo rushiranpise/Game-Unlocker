@@ -35,7 +35,8 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.garena.game.codm",
         "com.tencent.tmgp.kr.codm",
         "com.vng.codmvn",
-        "com.garena.game.kgvn"
+        "com.garena.game.kgvn",
+        "com.garena.game.lmjx"
     };
 
     // Packages to Spoof as OnePlus 8 Pro
@@ -57,8 +58,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.ngame.allstar.eu",
         "com.mojang.minecraftpe",
         "com.YoStar.AetherGazer",
-        "com.miHoYo.GenshinImpact",
-        "com.garena.game.lmjx"
+        "com.miHoYo.GenshinImpact"
     };
 
     // Packages to Spoof as OnePlus 9 Pro
