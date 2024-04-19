@@ -58,6 +58,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.mojang.minecraftpe",
         "com.YoStar.AetherGazer",
         "com.miHoYo.GenshinImpact",
+        "com.miHoYo.GenshinImpact.vn",
         "com.garena.game.lmjx"
     };
 
