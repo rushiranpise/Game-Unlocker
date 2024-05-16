@@ -104,7 +104,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     };
 
     // Packages to Spoof as Samsung Galaxy S24 Ultra
-    private static final String[] packagesToChangeBS4 = {
+    private static final String[] packagesToChangeS24U = {
         "com.tencent.ig"
     };
 
