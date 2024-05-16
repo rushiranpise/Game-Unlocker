@@ -50,7 +50,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.riotgames.league.teamfighttactics",
         "com.riotgames.league.teamfighttacticstw",
         "com.riotgames.league.teamfighttacticsvn",
-        "com.tencent.ig",
         "com.tencent.tmgp.pubgmhd",
         "com.vng.pubgmobile",
         "vng.games.revelation.mobile",
@@ -104,6 +103,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.tencent.tmgp.gnyx"
     };
 
+    // Packages to Spoof as Samsung Galaxy S24 Ultra
+    private static final String[] packagesToChangeS24U = {
+        "com.tencent.ig"
+    };
+
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
 
@@ -121,7 +125,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed " + packageName + " as Black Shark 4");
         }
 
-        // Iqoo
+        // iQOO
         if (Arrays.asList(packagesToChangeiQ11P).contains(packageName)) {
             propsToChangeiQ11P();
             XposedBridge.log("Spoofed " + packageName + " as iQOO 11 Pro");
@@ -138,12 +142,18 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
             XposedBridge.log("Spoofed " + packageName + " as OnePlus 9 Pro");
         }
 
-        // Poco
+        // POCO
         if (Arrays.asList(packagesToChangeF5).contains(packageName)) {
             propsToChangeF5();
-            XposedBridge.log("Spoofed " + packageName + " as Poco F5");
+            XposedBridge.log("Spoofed " + packageName + " as POCO F5");
         }
 
+        // Samsung
+        if (Arrays.asList(packagesToChangeS24U).contains(packageName)) {
+            propsToChangeS24U();
+            XposedBridge.log("Spoofed " + packageName + " as Samsung Galaxy S24 Ultra");
+        }
+        
         // Sony
         if (Arrays.asList(packagesToChangeXP5).contains(packageName)) {
             propsToChangeXP5();
@@ -163,7 +173,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     }
 
     // Asus
-    // Props to Spoof as Asus Rog 6
+    // Props to Spoof as Asus ROG 6
     private static void propsToChangeROG6() {
         setPropValue("BRAND", "asus");
         setPropValue("MANUFACTURER", "asus");
@@ -171,14 +181,14 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setPropValue("MODEL", "ASUS_AI2201");
     }
 
-    // Blackshark
-    // Props to Spoof as Blackshark 4
+    // Black Shark
+    // Props to Spoof as Black Shark 4
     private static void propsToChangeBS4() {
         setPropValue("MANUFACTURER", "blackshark");
         setPropValue("MODEL", "2SM-X706B");
     }
 
-    // Iqoo
+    // iQOO
     // Props to Spoof as iQOO 11 Pro
     private static void propsToChangeiQ11P() {
         setPropValue("MANUFACTURER", "vivo");
@@ -198,13 +208,20 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         setPropValue("MODEL", "LE2123");
     }
 
-    //Poco
-    // Props to Spoof as Poco F5
+    // POCO
+    // Props to Spoof as POCO F5
     private static void propsToChangeF5() {
         setPropValue("MANUFACTURER", "Xiaomi");
         setPropValue("MODEL", "23049PCD8G");
     }
 
+    // Samsung
+    // Props to Spoof as Samsung Galaxy S24 Ultra
+    private static void propsToChangeS24U() {
+        setPropValue("MANUFACTURER", "Samsung");
+        setPropValue("MODEL", "SM-S928B");
+    }
+    
     // Sony
     // Props to Spoof as Sony Xperia 5
     private static void propsToChangeXP5() {
