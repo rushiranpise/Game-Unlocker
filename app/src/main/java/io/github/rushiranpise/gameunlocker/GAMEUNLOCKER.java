@@ -39,7 +39,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     };
 
     // Packages to Spoof as OnePlus 8 Pro
-    private static final String[] packagesToChangeOP8P = {
+    private static final String[] packagesToChangeOP12R = {
         "com.miHoYo.GenshinImpact",
         "com.garena.game.lmjx"
     };
@@ -128,8 +128,8 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         }
 
         // OnePlus
-        if (Arrays.asList(packagesToChangeOP8P).contains(packageName)) {
-            propsToChangeOP8P();
+        if (Arrays.asList(packagesToChangeOP12R).contains(packageName)) {
+            propsToChangeOP12R();
             XposedBridge.log("Spoofed " + packageName + " as OnePlus 12R");
         }
 
@@ -187,7 +187,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
     // OnePlus
     // Props to Spoof as OnePlus 8 Pro
-    private static void propsToChangeOP8P() {
+    private static void propsToChangeOP12R() {
         setPropValue("MANUFACTURER", "OnePlus");
         setPropValue("MODEL", "CPH2585");
     }
