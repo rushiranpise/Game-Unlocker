@@ -40,23 +40,6 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
 
     // Packages to Spoof as OnePlus 8 Pro
     private static final String[] packagesToChangeOP8P = {
-        "com.netease.lztgglobal",
-        "com.pubg.imobile",
-        "com.pubg.krmobile",
-        "com.rekoo.pubgm",
-        "com.riotgames.league.wildrift",
-        "com.riotgames.league.wildrifttw",
-        "com.riotgames.league.wildriftvn",
-        "com.riotgames.league.teamfighttactics",
-        "com.riotgames.league.teamfighttacticstw",
-        "com.riotgames.league.teamfighttacticsvn",
-        "com.tencent.ig",
-        "com.tencent.tmgp.pubgmhd",
-        "com.vng.pubgmobile",
-        "vng.games.revelation.mobile",
-        "com.ngame.allstar.eu",
-        "com.mojang.minecraftpe",
-        "com.YoStar.AetherGazer",
         "com.miHoYo.GenshinImpact",
         "com.garena.game.lmjx"
     };
@@ -81,7 +64,24 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     // Packages to Spoof as Xiaomi 13 Pro
     private static final String[] packagesToChangeMI13P = {
         "com.levelinfinite.sgameGlobal",
-        "com.tencent.tmgp.sgame"
+        "com.tencent.tmgp.sgame",
+        "com.netease.lztgglobal",
+        "com.pubg.imobile",
+        "com.pubg.krmobile",
+        "com.rekoo.pubgm",
+        "com.riotgames.league.wildrift",
+        "com.riotgames.league.wildrifttw",
+        "com.riotgames.league.wildriftvn",
+        "com.riotgames.league.teamfighttactics",
+        "com.riotgames.league.teamfighttacticstw",
+        "com.riotgames.league.teamfighttacticsvn",
+        "com.tencent.ig",
+        "com.tencent.tmgp.pubgmhd",
+        "com.vng.pubgmobile",
+        "vng.games.revelation.mobile",
+        "com.ngame.allstar.eu",
+        "com.mojang.minecraftpe",
+        "com.YoStar.AetherGazer"
     };
 
     // Packages to Spoof as POCO F5
@@ -130,7 +130,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         // OnePlus
         if (Arrays.asList(packagesToChangeOP8P).contains(packageName)) {
             propsToChangeOP8P();
-            XposedBridge.log("Spoofed " + packageName + " as OnePlus 8 Pro");
+            XposedBridge.log("Spoofed " + packageName + " as OnePlus 12R");
         }
 
         if (Arrays.asList(packagesToChangeOP9P).contains(packageName)) {
@@ -189,7 +189,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     // Props to Spoof as OnePlus 8 Pro
     private static void propsToChangeOP8P() {
         setPropValue("MANUFACTURER", "OnePlus");
-        setPropValue("MODEL", "IN2020");
+        setPropValue("MODEL", "CPH2585");
     }
 
     // Props to Spoof as OnePlus 9 Pro
