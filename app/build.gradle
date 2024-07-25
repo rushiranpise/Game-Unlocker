@@ -7,11 +7,11 @@ android {
     buildToolsVersion "33.0.1"
 
     defaultConfig {
-        applicationId "io.github.rushiranpise.gameunlocker"
+        applicationId "io.github.senyxlois.appspoofer"
         minSdkVersion 28
         targetSdkVersion 33
         versionCode 4
-        versionName "7.0.0"
+        versionName "8.0.0"
     }
 
     buildTypes {
@@ -27,7 +27,7 @@ android {
     }
 
     dependenciesInfo.includeInApk false
-    namespace 'io.github.rushiranpise.gameunlocker'
+    namespace 'io.github.senyxlois.appspoofer'
 }
 
 dependencies {
