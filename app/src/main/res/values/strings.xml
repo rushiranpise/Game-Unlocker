@@ -1,6 +1,6 @@
 <resources>
-	<string name="app_name">Game Unlocker</string>
-	<string name="xposed_description">Spoof your device as different model for specific games to unlock higher FPS</string>
+	<string name="app_name">Senyx App spoofer</string>
+	<string name="xposed_description">Spoof your device as different model for specific apps or games to unlock higher FPS</string>
 	<string-array name="scope">
 		<item>com.YoStar.AetherGazer</item>
 		<item>com.activision.callofduty.shooter</item>
