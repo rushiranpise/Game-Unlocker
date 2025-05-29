@@ -104,6 +104,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.tencent.tmgp.gnyx"
     };
 
+    // Packages to Spoof as GameMatrix
+    private static final String[] packagesToChangeGameMatrix = {
+        "com.proxima.dfm",
+        "com.garena.game.df"
+    };
+
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
 
@@ -159,6 +165,12 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         if (Arrays.asList(packagesToChangeMI13P).contains(packageName)) {
             propsToChangeMI13P();
             XposedBridge.log("Spoofed " + packageName + " as Xiaomi Mi 13 Pro");
+        }
+
+        // GameMatrix
+        if (Arrays.asList(packagesToChangeGameMatrix).contains(packageName)) {
+            propsToChangeGameMatrix();
+            XposedBridge.log("Spoofed " + packageName + " as GameMatrix");
         }
     }
 
@@ -223,6 +235,11 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
     private static void propsToChangeMI13P() {
         setPropValue("MANUFACTURER", "Xiaomi");
         setPropValue("MODEL", "2210132C");
+    }
+
+    // Props to Spoof as GameMatrix
+    private static void propsToChangeGameMatrix() {
+        setPropValue("MODEL", "gamematrix");
     }
 
     private static void setPropValue(String key, Object value) {
