@@ -24,6 +24,7 @@ public class GAMEUNLOCKER implements IXposedHookLoadPackage {
         "com.activision.callofduty.shooter",
         "com.activision.callofudty.warzone",
         "com.ea.gp.fifamobile",
+        "com.garena.game.df",
         "com.gameloft.android.ANMP.GloftA9HM",
         "com.madfingergames.legends",
         "com.pearlabyss.blackdesertm",
